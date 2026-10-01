@@ -1,0 +1,37 @@
+* { box-sizing: border-box; }
+body { margin: 0; font: 14px system-ui, sans-serif; height: 100vh; display: flex; flex-direction: column; }
+nav { display: flex; gap: 8px; align-items: center; padding: 8px 12px; background: #1f2937; color: #fff; }
+nav button { background: none; border: 0; color: #cbd5e1; padding: 6px 10px; cursor: pointer; border-radius: 6px; }
+nav button.active { background: #374151; color: #fff; }
+nav input { margin-left: auto; padding: 4px 8px; }
+#status { font-size: 12px; color: #9ca3af; }
+.tab { display: none; flex: 1; min-height: 0; }
+.tab.active { display: flex; }
+aside { width: 200px; border-right: 1px solid #ddd; padding: 8px; overflow-y: auto; }
+aside h3 { margin: 8px 0 4px; font-size: 12px; text-transform: uppercase; color: #666; }
+aside ul { list-style: none; margin: 0; padding: 0; }
+aside li { padding: 4px 6px; cursor: pointer; border-radius: 4px; }
+aside li.active { background: #dbeafe; }
+#users li { cursor: default; }
+main { flex: 1; display: flex; flex-direction: column; min-width: 0; padding: 8px; overflow-y: auto; }
+#chat main { padding: 0; }
+#messages { flex: 1; overflow-y: auto; list-style: none; margin: 0; padding: 8px 12px; }
+#messages li { margin: 4px 0; padding: 6px 10px; border-radius: 10px; background: #eee; max-width: 70%; overflow-wrap: anywhere; }
+#messages li.mine { background: #cfe8ff; margin-left: auto; }
+.meta { display: block; font-size: 11px; color: #666; }
+#chat-form { display: flex; gap: 6px; padding: 8px; border-top: 1px solid #ddd; }
+#chat-form input, #call-form input { flex: 1; padding: 8px; }
+form button, #back { padding: 8px 14px; cursor: pointer; }
+#thread-form, #reply-form { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+textarea { min-height: 70px; padding: 8px; font: inherit; }
+#threads, #posts { list-style: none; padding: 0; margin: 0; }
+#threads li { padding: 10px; border-bottom: 1px solid #eee; cursor: pointer; }
+#threads li:hover { background: #f5f5f5; }
+#posts li { padding: 10px; border: 1px solid #e5e5e5; border-radius: 8px; margin-bottom: 8px; white-space: pre-wrap; overflow-wrap: anywhere; }
+#call-form { display: flex; gap: 6px; }
+#call-note { color: #666; }
+#tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px; }
+.tile { position: relative; background: #111; border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; }
+.tile video { width: 100%; height: 100%; object-fit: cover; }
+.tile span { position: absolute; left: 8px; bottom: 6px; color: #fff; font-size: 12px; text-shadow: 0 0 3px #000; }
+@media (max-width: 600px) { aside { width: 120px; } #messages li { max-width: 90%; } }

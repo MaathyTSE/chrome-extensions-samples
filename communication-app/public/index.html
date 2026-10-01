@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Communication app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <strong>Talk</strong>
+      <button data-tab="chat" class="active">Chat</button>
+      <button data-tab="forum">Forum</button>
+      <button data-tab="video">Video</button>
+      <input id="name" placeholder="Your name" maxlength="24" />
+      <span id="status">connecting…</span>
+    </nav>
+
+    <section id="chat" class="tab active">
+      <aside>
+        <h3>Rooms</h3>
+        <ul id="rooms"></ul>
+        <form id="room-form"><input id="room-new" placeholder="New room" maxlength="32" /></form>
+        <h3>Online</h3>
+        <ul id="users"></ul>
+      </aside>
+      <main>
+        <ul id="messages" aria-live="polite"></ul>
+        <form id="chat-form"><input id="chat-text" placeholder="Message" autocomplete="off" required /><button>Send</button></form>
+      </main>
+    </section>
+
+    <section id="forum" class="tab">
+      <main>
+        <div id="thread-list-view">
+          <form id="thread-form">
+            <input id="thread-title" placeholder="New thread title" maxlength="120" required />
+            <textarea id="thread-body" placeholder="Say something…" maxlength="5000" required></textarea>
+            <button>Post thread</button>
+          </form>
+          <ul id="threads"></ul>
+        </div>
+        <div id="thread-view" hidden>
+          <button id="back">← All threads</button>
+          <h2 id="thread-heading"></h2>
+          <ul id="posts"></ul>
+          <form id="reply-form">
+            <textarea id="reply-body" placeholder="Reply…" maxlength="5000" required></textarea>
+            <button>Reply</button>
+          </form>
+        </div>
+      </main>
+    </section>
+
+    <section id="video" class="tab">
+      <main>
+        <form id="call-form">
+          <input id="call-room" placeholder="Room name" value="lobby" maxlength="32" />
+          <button id="join">Join call</button>
+          <button id="hangup" type="button" hidden>Leave</button>
+          <button id="mute" type="button" hidden>Mute</button>
+          <button id="cam" type="button" hidden>Camera off</button>
+        </form>
+        <p id="call-note">Up to 6 people per room. Open this page in another tab or device and join the same room.</p>
+        <div id="tiles"></div>
+      </main>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>

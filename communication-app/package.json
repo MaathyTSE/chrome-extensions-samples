@@ -1,0 +1,15 @@
+{
+  "name": "communication-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Web chat, forum and video calls with its own server.",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "ws": "^8.18.0"
+  }
+}
