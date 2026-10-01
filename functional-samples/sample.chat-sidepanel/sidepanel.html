@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <header>
+      <input id="name" placeholder="Your name" maxlength="24" />
+      <input id="server" placeholder="wss://relay (optional)" />
+      <span id="status" title="Connection status">local</span>
+    </header>
+    <ul id="messages" aria-live="polite"></ul>
+    <form id="form">
+      <input id="text" placeholder="Type a message" autocomplete="off" required />
+      <button type="submit">Send</button>
+    </form>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>

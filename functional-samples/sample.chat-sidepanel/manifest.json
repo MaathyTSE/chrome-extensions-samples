@@ -1,0 +1,16 @@
+{
+  "name": "Chat side panel",
+  "version": "0.1",
+  "manifest_version": 3,
+  "description": "A chat app in the side panel. Syncs across windows and can relay messages over a WebSocket server.",
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Open chat"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "permissions": ["sidePanel", "storage"]
+}
